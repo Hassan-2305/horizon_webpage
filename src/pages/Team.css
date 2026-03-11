@@ -1,0 +1,53 @@
+/* Team.css */
+
+.team-section { background: var(--bg); }
+.team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; border: 1px solid var(--glass-border); overflow: hidden; border-radius: 4px; }
+.member { padding: 2rem 1.5rem; background: var(--glass); border-right: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); position: relative; overflow: hidden; transition: background .4s; }
+.member::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .4s; }
+.member:hover::before { transform: scaleX(1); }
+.member:hover { background: rgba(255,77,28,.05); }
+.member--join { background: rgba(255,77,28,.06); border-color: rgba(255,77,28,.2); }
+.member--join:hover { background: rgba(255,77,28,.12); }
+.m-num { font-family: var(--font-display); font-size: 2.5rem; color: rgba(255,255,255,.05); line-height: 1; margin-bottom: .6rem; }
+.m-icon { font-size: 1.8rem; margin-bottom: .8rem; display: block; }
+.m-name { font-size: .88rem; font-weight: 600; color: var(--ink); margin-bottom: .3rem; }
+.m-name--accent { color: var(--accent); }
+.m-role { font-size: .75rem; color: var(--muted); }
+.m-dept { font-size: .65rem; font-weight: 500; letter-spacing: .08em; color: var(--accent); margin-top: .5rem; text-transform: uppercase; }
+
+/* ── JOIN ── */
+.join-section { background: linear-gradient(to bottom, var(--bg), #08090f); }
+.join-card {
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 6rem;
+  border: 1px solid var(--glass-border); border-radius: 4px;
+  padding: 4rem; background: var(--glass);
+}
+.jc-left p { font-size: .95rem; color: var(--muted); line-height: 1.85; margin-bottom: 2rem; font-weight: 300; }
+.jc-left strong { color: var(--ink); font-weight: 500; }
+.join-list { list-style: none; display: flex; flex-direction: column; gap: .8rem; }
+.join-list li { font-size: .9rem; color: var(--muted); }
+
+.jc-right { display: flex; flex-direction: column; justify-content: center; gap: 2rem; }
+.jc-stat span { font-family: var(--font-display); font-size: 3.5rem; color: var(--accent); display: block; line-height: 1; }
+.jc-stat p { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: .3rem; }
+.btn-apply {
+  display: inline-block; margin-top: 1rem;
+  font-size: .8rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  background: var(--accent); color: #fff; padding: .9rem 2rem; border-radius: 2px;
+  text-decoration: none; transition: background .3s, transform .2s;
+  align-self: flex-start;
+}
+.btn-apply:hover { background: #d63a10; transform: translateY(-2px); }
+
+/* ── VALUES ── */
+.values-section { background: #08090f; }
+.values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.value-card { border: 1px solid var(--glass-border); border-radius: 4px; padding: 2rem; background: var(--glass); transition: border-color .3s; }
+.value-card:hover { border-color: rgba(255,77,28,.25); }
+.vc-icon { font-size: 2rem; margin-bottom: 1rem; }
+.value-card h4 { font-size: .85rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); margin-bottom: .7rem; }
+.value-card p  { font-size: .85rem; color: var(--muted); line-height: 1.65; }
+
+@media (max-width: 1100px) { .values-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 900px)  { .team-grid { grid-template-columns: repeat(2,1fr); } .join-card { grid-template-columns: 1fr; gap: 3rem; } }
+@media (max-width: 560px)  { .team-grid { grid-template-columns: 1fr 1fr; } .values-grid { grid-template-columns: 1fr; } }
